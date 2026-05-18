@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net" modified="2026-05-18T01:26:00.000Z" agent="Devin" version="24.0.0" type="device">
+  <diagram id="aws-architecture" name="AWS Architecture">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="AWS Architecture - Serverless Event-Driven" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="460" y="30" width="480" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Cloud boundary -->
+        <mxCell id="aws-cloud" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=14;fontStyle=1;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;stroke=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="1240" height="500" as="geometry" />
+        </mxCell>
+
+        <!-- Client / User -->
+        <mxCell id="client" value="Client&#xa;(User/App)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;" vertex="1" parent="1">
+          <mxGeometry x="130" y="280" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="apigw" value="Amazon&#xa;API Gateway" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
+          <mxGeometry x="310" y="280" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda 1 -->
+        <mxCell id="lambda1" value="AWS Lambda&#xa;(Processamento)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="510" y="280" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- DynamoDB -->
+        <mxCell id="dynamodb" value="Amazon&#xa;DynamoDB" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#C925D1;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;" vertex="1" parent="1">
+          <mxGeometry x="710" y="280" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- SNS -->
+        <mxCell id="sns" value="Amazon&#xa;SNS" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;" vertex="1" parent="1">
+          <mxGeometry x="910" y="280" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- SQS -->
+        <mxCell id="sqs" value="Amazon&#xa;SQS" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="280" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda 2 -->
+        <mxCell id="lambda2" value="AWS Lambda&#xa;(Consumer)" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="130" width="64" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <!-- Client -> API Gateway -->
+        <mxCell id="arrow1" value="REST API" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;strokeColor=#232F3E;strokeWidth=2;fontSize=11;fontColor=#232F3E;" edge="1" source="client" target="apigw" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -> Lambda 1 -->
+        <mxCell id="arrow2" value="Invoke" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;strokeColor=#232F3E;strokeWidth=2;fontSize=11;fontColor=#232F3E;" edge="1" source="apigw" target="lambda1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Lambda 1 -> DynamoDB -->
+        <mxCell id="arrow3" value="Read/Write" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;strokeColor=#232F3E;strokeWidth=2;fontSize=11;fontColor=#232F3E;" edge="1" source="lambda1" target="dynamodb" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- DynamoDB -> SNS (via DynamoDB Streams) -->
+        <mxCell id="arrow4" value="DynamoDB Streams&#xa;/ Publish" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;strokeColor=#232F3E;strokeWidth=2;fontSize=11;fontColor=#232F3E;" edge="1" source="dynamodb" target="sns" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SNS -> SQS -->
+        <mxCell id="arrow5" value="Subscribe" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;strokeColor=#232F3E;strokeWidth=2;fontSize=11;fontColor=#232F3E;" edge="1" source="sns" target="sqs" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SQS -> Lambda 2 -->
+        <mxCell id="arrow6" value="Poll / Trigger" style="edgeStyle=orthogonalEdgeStyle;html=1;align=center;verticalAlign=bottom;endArrow=block;endFill=1;rounded=0;strokeColor=#232F3E;strokeWidth=2;fontSize=11;fontColor=#232F3E;" edge="1" source="sqs" target="lambda2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Flow description labels -->
+        <mxCell id="label1" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;fontColor=#FFFFFF;strokeColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="270" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="label2" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;fontColor=#FFFFFF;strokeColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="270" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="label3" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;fontColor=#FFFFFF;strokeColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="270" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="label4" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;fontColor=#FFFFFF;strokeColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="815" y="270" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="label5" value="5" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;fontColor=#FFFFFF;strokeColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="270" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="label6" value="6" style="ellipse;whiteSpace=wrap;html=1;fillColor=#232F3E;fontColor=#FFFFFF;strokeColor=none;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="210" width="24" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#CCCCCC;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="460" width="600" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="Fluxo da Arquitetura:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="130" y="465" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-text" value="1. Client envia request REST para o API Gateway&#xa;2. API Gateway invoca a Lambda de processamento&#xa;3. Lambda lê/grava dados no DynamoDB&#xa;4. Evento do DynamoDB publica mensagem no SNS&#xa;5. SNS encaminha a mensagem para a fila SQS&#xa;6. SQS dispara a Lambda Consumer para processar a mensagem" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#555555;spacingTop=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="490" width="370" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
